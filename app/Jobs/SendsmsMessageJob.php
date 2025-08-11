@@ -27,6 +27,8 @@ class SendsmsMessageJob implements ShouldQueue
         $this->message = $message;
         $this->permission = $permission;
 
+        $this->sid ;
+        $this->token ;
         $this->sid = "AC99e8e9dc79f2a8e338400ed69457dc70";
         $this->token = "a6376fad198ff4353eef3bc28bca9bf6";
     }

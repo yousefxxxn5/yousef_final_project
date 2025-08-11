@@ -23,7 +23,8 @@ class SendTelegramMessageJob implements ShouldQueue
         // \Log::info('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx is running!');
         $this->id = $id;
         $this->message = $message;
-        $this->botToken = '7759882800:AAFy-m_JzQJC10Q85C391u_ym-dxVVrueFs'; // من الأفضل استخدام env
+        $this->botToken ; // من الأفضل استخدام env
+        // $this->botToken = '7759882800:AAFy-m_JzQJC10Q85C391u_ym-dxVVrueFs'; // من الأفضل استخدام env
         $this->permission = $permission;
     }
 
