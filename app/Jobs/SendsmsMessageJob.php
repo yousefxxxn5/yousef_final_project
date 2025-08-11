@@ -29,8 +29,8 @@ class SendsmsMessageJob implements ShouldQueue
 
         $this->sid ;
         $this->token ;
-        $this->sid = "AC99e8e9dc79f2a8e338400ed69457dc70";
-        $this->token = "a6376fad198ff4353eef3bc28bca9bf6";
+        $this->sid;
+        $this->token ;
     }
     public function sendMessage($phone_number, $message)
     {
@@ -39,7 +39,7 @@ class SendsmsMessageJob implements ShouldQueue
         //     ->create(
         //         $phone_number, // to
         //         array(
-        //             "messagingServiceSid" => "MGd315d2b11946aaba02c712028798c028",
+        //             "messagingServiceSid" => "",
         //             "body" => $message
         //         )
         //     );

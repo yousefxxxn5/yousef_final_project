@@ -13,11 +13,10 @@ class whatsappService
     private $httpClient;
         public $sid ;
         public $token ;
-        // public $sid = "AC73871847f070c5b50083b1b1c0374704";
-        // public $token = "65b1ff2e56ca6e214fbb62d70a4c04ee";
     public function __construct()
     {
-
+   $this->sid = env('TWILIO_SID');
+    $this->token = env('TWILIO_TOKEN');
 
     }
     public function sendMessage( $id , $name)

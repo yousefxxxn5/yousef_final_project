@@ -13,9 +13,10 @@ class TelegramService
 
     public function __construct($id)
     {
-        // $this->botToken = '7759882800:AAFy-m_JzQJC10Q85C391u_ym-dxVVrueFs'; // أضف هذا في ملف .env
-        // $this->chatId = $id;
-        // $this->httpClient = new Client(['base_uri' => 'https://api.telegram.org']);
+        $this->botToken = env('TELEGRAM_BOT_TOKEN');
+
+        $this->chatId = $id;
+        $this->httpClient = new Client(['base_uri' => 'https://api.telegram.org']);
     }
     public function sendMessage($message)
     {
@@ -41,12 +42,12 @@ class TelegramService
                     $users = telegram::where('exid', $foruser)
                     ->where('state', 1)
                     ->get();
-                    
+                    \Log::info( $users );
 
     foreach ($users as $user) {
         $this->chatId = $user->id_user; // foruser = id_user في قاعدة البيانات
          $this->sendMessage($message);   // إرسال الرسالة لكل مستخدم
-
+        \Log::info('send');
     }
 
     return "تم الإرسال إلى " . count($users) . " مستخدم";
